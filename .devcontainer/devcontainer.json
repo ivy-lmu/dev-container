@@ -1,0 +1,23 @@
+{
+	"name": "Axon Ivy Designer",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "17",
+			"installMaven": "true",
+			"installGradle": "false"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"/tmp/ivy-extension-11.2.0.vsix"
+			],
+			"settings": {
+				"engine.runEmbedded": false
+			}
+		}
+	}
+}

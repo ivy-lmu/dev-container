@@ -1,0 +1,16 @@
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    network_mode: service:engine
+    command: sleep infinity
+  engine:
+    image: axonivy/axonivy-engine:dev
+    restart: unless-stopped
+    volumes:
+      - ../..:/workspaces:cached
+    environment:
+      JAVA_OPTS_IVY_SYSTEM: -Ddev.mode=true
