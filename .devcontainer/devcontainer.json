@@ -14,7 +14,9 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"/tmp/ivy-extension-11.2.0.vsix"
+				"/tmp/ivy-extension-11.2.0.vsix",
+				"ms-playwright.playwright",
+				"alphabotsec.vscode-eclipse-keybindings"
 			],
 			"settings": {
 				"engine.runEmbedded": false
