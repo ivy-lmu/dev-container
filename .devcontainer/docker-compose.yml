@@ -1,5 +1,7 @@
 services:
   ivyEngine:
+    ports:
+      - 8080:8080
     image: axonivy/axonivy-engine:dev
     restart: unless-stopped
     volumes:
