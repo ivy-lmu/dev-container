@@ -3,6 +3,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "devcontainer",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"forwardPorts": [8080],
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "17",
@@ -13,7 +14,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"/tmp/ivy-extension-11.2.0.vsix",
+				"/home/ivy-extension-11.2.0.vsix",
 				"ms-playwright.playwright",
 				"alphabotsec.vscode-eclipse-keybindings"
 			],
