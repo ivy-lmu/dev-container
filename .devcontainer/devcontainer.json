@@ -15,11 +15,25 @@
 		"vscode": {
 			"extensions": [
 				"/home/ivy-extension-11.2.0.vsix",
-				"ms-playwright.playwright",
-				"alphabotsec.vscode-eclipse-keybindings"
+				"alphabotsec.vscode-eclipse-keybindings",
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-pg"
+
 			],
 			"settings": {
-				"engine.runEmbedded": false
+				"engine.runEmbedded": false,
+				"sqltools.connections": [
+					{
+						"previewLimit": 50,
+						"server": "localhost",
+						"port": 5432,
+						"driver": "PostgreSQL",
+						"name": "sys db",
+						"database": "AxonIvySystemDatabase",
+						"username": "admin",
+						"password": "1234"
+					}
+				]
 			}
 		}
 	}
