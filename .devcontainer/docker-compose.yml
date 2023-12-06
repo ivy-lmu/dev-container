@@ -1,30 +1,19 @@
 services:
   ivyEngine:
     image: axonivy/axonivy-engine:dev
-    depends_on:
-      - postgres
     restart: unless-stopped
     volumes:
-      - ../..:/workspaces:cached
-      - ./ivy.yaml:/etc/axonivy-engine/ivy.yaml
-      - ./demo-licence.lic:/etc/axonivy-engine/demo-licence.lic
-    network_mode: service:postgres
-
+      - ..:/workspaces:cached
     environment:
       JAVA_OPTS_IVY_SYSTEM: -Ddev.mode=true
+
   devcontainer:
     depends_on:
       - ivyEngine
     build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ../..:/workspaces:cached
+      - ..:/workspaces:cached
     command: sleep infinity
-    network_mode: service:postgres
-
-  postgres:
-    image: postgres
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: 1234
+    network_mode: service:ivyEngine
