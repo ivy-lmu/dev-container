@@ -3,7 +3,7 @@ services:
     image: axonivy/axonivy-engine:dev
     restart: unless-stopped
     volumes:
-      - ..:/workspaces:cached
+      - ../..:/workspaces:cached
     environment:
       JAVA_OPTS_IVY_SYSTEM: -Ddev.mode=true
 
@@ -14,6 +14,6 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ..:/workspaces:cached
+      - ../..:/workspaces:cached
     command: sleep infinity
     network_mode: service:ivyEngine

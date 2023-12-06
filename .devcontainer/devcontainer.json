@@ -2,14 +2,13 @@
 	"name": "Axon Ivy Dev Container",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "devcontainer",
-	"workspaceFolder": "/workspaces/",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"forwardPorts": [8080],
 	"containerEnv": {
 		"ENGINE_PORT": "8080"
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "17",
 			"installMaven": "true",
 			"installGradle": "false"
 		}
