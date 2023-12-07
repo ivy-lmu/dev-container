@@ -16,8 +16,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"/home/ivy-extension-11.2.0.vsix",
-				"alphabotsec.vscode-eclipse-keybindings"
+				"axon-ivy.designer"
 			],
 			"settings": {
 				"engine.runEmbedded": false

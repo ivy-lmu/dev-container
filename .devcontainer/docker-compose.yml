@@ -8,11 +8,9 @@ services:
       JAVA_OPTS_IVY_SYSTEM: -Ddev.mode=true
 
   devcontainer:
+    image: mcr.microsoft.com/devcontainers/java:17-bullseye
     depends_on:
       - ivyEngine
-    build:
-      context: .
-      dockerfile: Dockerfile
     volumes:
       - ../..:/workspaces:cached
     command: sleep infinity
