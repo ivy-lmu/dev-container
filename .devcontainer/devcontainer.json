@@ -1,5 +1,5 @@
 {
-	"name": "Axon Ivy Designer",
+	"name": "Axon Ivy Dev Container",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "devcontainer",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -9,7 +9,6 @@
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "17",
 			"installMaven": "true",
 			"installGradle": "false"
 		}
@@ -17,26 +16,11 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"/home/ivy-extension-11.2.0.vsix",
-				"alphabotsec.vscode-eclipse-keybindings",
-				"mtxr.sqltools",
-				"mtxr.sqltools-driver-pg"
-
+				"axon-ivy.designer"
 			],
 			"settings": {
-				"engine.runEmbedded": false,
-				"sqltools.connections": [
-					{
-						"previewLimit": 50,
-						"server": "localhost",
-						"port": 5432,
-						"driver": "PostgreSQL",
-						"name": "sys db",
-						"database": "AxonIvySystemDatabase",
-						"username": "admin",
-						"password": "1234"
-					}
-				]
+				"engine.runByExtension": false,
+				"engine.directory": "/usr/lib/axonivy-engine"
 			}
 		}
 	}
