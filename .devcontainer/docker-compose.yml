@@ -4,6 +4,7 @@ services:
     restart: unless-stopped
     volumes:
       - ../..:/workspaces:cached
+      - ivy-home:${IVY_HOME}
     environment:
       JAVA_OPTS_IVY_SYSTEM: -Ddev.mode=true
 
@@ -13,5 +14,9 @@ services:
       - ivyEngine
     volumes:
       - ../..:/workspaces:cached
+      - ivy-home:${IVY_HOME}
     command: sleep infinity
     network_mode: service:ivyEngine
+
+volumes:
+  ivy-home:

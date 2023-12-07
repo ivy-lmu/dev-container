@@ -19,7 +19,8 @@
 				"axon-ivy.designer"
 			],
 			"settings": {
-				"engine.runEmbedded": false
+				"engine.runByExtension": false,
+				"engine.directory": "/usr/lib/axonivy-engine"
 			}
 		}
 	}
