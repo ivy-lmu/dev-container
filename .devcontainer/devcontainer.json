@@ -1,16 +1,14 @@
 {
 	"name": "Axon Ivy Dev Container",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "devcontainer",
+	"build": {"dockerfile": "Dockerfile", "args": {
+		"IVY_ENGINE_DOWNLOAD_URL": "https://dev.axonivy.com/permalink/dev/axonivy-engine.zip"
+	}},
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"forwardPorts": [8080],
-	"containerEnv": {
-		"ENGINE_PORT": "8080"
-	},
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"installMaven": "true",
-			"installGradle": "false"
+			"version": "17",
+			"installMaven": "true"
 		}
 	},
 	"customizations": {
@@ -19,7 +17,7 @@
 				"axon-ivy.designer"
 			],
 			"settings": {
-				"engine.runByExtension": false,
+				"engine.runByExtension": true,
 				"engine.directory": "/usr/lib/axonivy-engine"
 			}
 		}
